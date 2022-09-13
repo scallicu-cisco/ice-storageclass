@@ -1,0 +1,20 @@
+storageclass:
+  - name: bob
+    annotations: 
+      foo: bar
+    labels:
+      bar: foo
+    provisioner: bob-provsion
+    reclaimPolicy: Retain2
+    volumeBindingMode: immediate
+    parameters:
+      availability: nova
+    allowedTopologies:
+    - matchLabelExpressions:
+      - key: failure-domain.beta.kubernetes.io/zone
+        values:
+        - us-central-1a
+        - us-central-1b
+
+  - name: sue 
+    
